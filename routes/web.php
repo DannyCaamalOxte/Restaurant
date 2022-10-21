@@ -31,6 +31,8 @@ Route::view('ventasHechas','ventasHechas');
 Route::view('ventasHechasc','ventasHechasc');
 Route::view('ventasHechast','ventasHechast');
 Route::view('pedidos','pedidos');
+Route::view('p','principal');
+
 
 //apis
 Route::apiResource('apiProducto','ProductoController');
