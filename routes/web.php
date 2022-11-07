@@ -31,8 +31,12 @@ Route::view('ventasHechas','ventasHechas');
 Route::view('ventasHechasc','ventasHechasc');
 Route::view('ventasHechast','ventasHechast');
 Route::view('pedidos','pedidos');
-Route::view('p','principal');
 
+//rutas para NEW LEFT
+Route::view('Menú','platillos');
+Route::view('Paquetes','paquetes');
+Route::view('agregarPlatillos','agregarPlatillos');
+Route::view('corteCaja','corteCaja');
 
 //apis
 Route::apiResource('apiProducto','ProductoController');
@@ -43,6 +47,7 @@ Route::apiResource('apiVentashechas','VentashechasController');
 Route::apiResource('apiProductoc','ProductocController');
 Route::apiResource('apiProductot','ProductotController');
 Route::apiResource('apiPedido','PedidoController');
+Route::apiResource('apiPlato','PlatosController');
 
 //generar ticket
 Route::get('ticket/{folio}',[
