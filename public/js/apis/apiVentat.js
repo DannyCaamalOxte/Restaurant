@@ -6,7 +6,6 @@ var Ventat=ruta + '/apiVentat';
 
 new Vue({
 
-
 	http: {
       headers: {
         'X-CSRF-TOKEN': document.querySelector('#token').getAttribute('value')
