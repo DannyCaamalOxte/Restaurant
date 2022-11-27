@@ -47,6 +47,7 @@ Route::apiResource('apiVentashechas','VentashechasController');
 Route::apiResource('apiProductoc','ProductocController');
 Route::apiResource('apiProductot','ProductotController');
 Route::apiResource('apiPedido','PedidoController');
+//apisnewleaft
 Route::apiResource('apiPlato','PlatosController');
 
 //generar ticket

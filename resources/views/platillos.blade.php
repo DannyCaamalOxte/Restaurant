@@ -2,9 +2,68 @@
 @section('titulo','Menú')
 @section('contenido')
 
-<h1>Menu IDS 7a</h1>
-<button class="btn btn-danger">hola</button>
-<div  id="apiPlatillos">
+<!--inicio del contenido del menu -->
+<div class="container-fluid px-4">
+                        <div class="container-fluid px-4" style="text-align: center;">
+                        <h5 class="mt-4">Menú(Todo)</h5>
+                        <ol class="breadcrumb mb-4" class="center">
+                        	<!-- barra de navegacion del menu -->
+                            <li class="breadcrumb-item"><a href="index">Todo</a></li>
+                            <li class="breadcrumb-item"><a href="index">Bebidas</a></li>
+                            <li class="breadcrumb-item"><a href="index">Postres</a></li>
+                           
+                        </ol>                        <div class="row">
+                            <div class="col-xl-3 col-md-6">
+                                <div class="card bg-info text-white mb-4">
+                                    <img src="dist/img/bk-3.jpg" width="200" height="135">
+                                    <div class="card-body"><center>Hamburguesa</center></div>
+                                    <div class="card-footer d-flex align-items-center justify-content-between">
+                                        <a class="small text-white stretched-link" href="#">$50.00 MXN</a>
+                                        <div class="small text-white"><i class="fa-duotone fa-cart-shopping"></i></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                             <div class="col-xl-3 col-md-6">
+                                <div class="card bg-info text-white mb-4">
+                                    <img src="dist/img/jugonaranja.jpg">
+                                    <div class="card-body"><center>Bebida sabor naranja</center></div>
+                                    <div class="card-footer d-flex align-items-center justify-content-between">
+                                        <a class="small text-white stretched-link" href="#">$30.00 MXN</a>
+                                        <div class="small text-white"><i class="fa-duotone fa-cart-shopping"></i></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-xl-3 col-md-6">
+                                <div class="card bg-info text-white mb-4">
+                                    <img src="dist/img/muffin.jpg" width="200" height="135">
+                                    <div class="card-body"><center>Muffin</center></div>
+                                    <div class="card-footer d-flex align-items-center justify-content-between">
+                                        <a class="small text-white stretched-link" href="#">$20.00 MXN</a>
+                                        <div class="small text-white"><i class="fa-duotone fa-cart-shopping"></i></div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                            
+
+
+                            
+                           
+                            
+               
+                        </div>
+
+                        <div align="right">
+                        	<a href="#"><i class="fa-duotone fa-cart-shopping" href="#"></i>
+			</a>
+
+                        	
+		</div>
+<!-- fin del contenido del menu -->
 
 
 </div>
