@@ -1,11 +1,11 @@
 @extends('layouts.master')
-@section('titulo','Menú')
+@section('titulo','Postres')
 @section('contenido')
 
 <!--inicio del contenido del menu -->
 <div class="container-fluid px-4">
                         <div class="container-fluid px-4" style="text-align: center;">
-                        <h5 class="mt-4">Menú(Todo)</h5>
+                        <h5 class="mt-4">Postres</h5>
                         <ol class="breadcrumb mb-4" class="center">
                         	<!-- barra de navegacion del menu -->
                             <li class="breadcrumb-item"><a href="Menú">Todo</a></li>
@@ -15,8 +15,8 @@
                         </ol>                        <div class="row">
                             <div class="col-xl-3 col-md-6">
                                 <div class="card bg-info text-white mb-4">
-                                    <img src="dist/img/bk-3.jpg" width="200" height="135">
-                                    <div class="card-body"><center>Hamburguesa</center></div>
+                                    <img src="dist/img/eclairs.jpg" width="200" height="135">
+                                    <div class="card-body"><center>Eclairs</center></div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
                                         <a class="small text-white stretched-link" href="#">$50.00 MXN</a>
                                         <div class="small text-white"><i class="fa-duotone fa-cart-shopping"></i></div>
@@ -26,8 +26,8 @@
 
                              <div class="col-xl-3 col-md-6">
                                 <div class="card bg-info text-white mb-4">
-                                    <img src="dist/img/jugonaranja.jpg">
-                                    <div class="card-body"><center>Bebida sabor naranja</center></div>
+                                    <img src="dist/img/cheesecake.jpg" width="200" height="135">
+                                    <div class="card-body"><center>Cheesecake</center></div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
                                         <a class="small text-white stretched-link" href="#">$30.00 MXN</a>
                                         <div class="small text-white"><i class="fa-duotone fa-cart-shopping"></i></div>

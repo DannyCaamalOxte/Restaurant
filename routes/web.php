@@ -37,6 +37,8 @@ Route::view('Menú','platillos');
 Route::view('Paquetes','paquetes');
 Route::view('agregarPlatillos','agregarPlatillos');
 Route::view('corteCaja','corteCaja');
+Route::view('Bebidas','bebidas');
+Route::view('Postres','postres');
 
 //apis
 Route::apiResource('apiProducto','ProductoController');
