@@ -1,4 +1,6 @@
-var apiCat='http://localhost/ttd4a22/public/apiCat';
+var ruta = document.querySelector("[name=route]").value;
+
+var apiPlato=ruta + '/apiPlato';
 
 new Vue({
 	http: {
@@ -7,118 +9,183 @@ new Vue({
       }
     },
 
-    el:"#apiCategorias",
+    el:"#apiPlatillos",
 
     data:{
-    	mensaje:'Categorías',
-    	categoriasCargadas:[],
-
-      nombre_categoria:'',
-
-      id_grupo:'',
-
-      agregando:true,
-
-      visualizar:0,
-
-      prods:[],
+    	mensaje:'Administración del menú',
+      platosCargados:[],
+      nombre:'',
+      precio:0,
+      comentario:'',
+      agregar:true,
+      id_plato:'',
+      nombrePlato:'',
 
     },
     created:function(){
-    	this.obtenercategorias();
+    	this.obtenerPlatos();
 
     },
     methods:{
-    	obtenercategorias:function(){
-    		this.$http.get(apiCat).then(function(j){
-    			this.categoriasCargadas=j.data;
-    			console.log(this.categoriasCargadas);
+    	obtenerPlatos:function(){
+    		this.$http.get(apiPlato).then(function(j){
+    			this.platosCargados=j.data;
+    			//console.log(this.platosCargados);
     		})
     	   
     	},
-      mostrarModalCategorias:function(){
-        $('#modalCategorias').modal('show');
+      mostrarModal:function(){
+        this.agregar=true;
+        this.limpiarModal();
+        $('#modalPlatillo').modal('show');
 
       },
-      guardarCategoria:function(){
-        //construir el objeto
-        var categoria = {nombre_grupo:this.nombre_categoria};
-
-        this.$http.post(apiCat,categoria).then(function(j){
-          $('#modalCategorias').modal('hide');
-          //console.log('exito');
-          this.obtenercategorias();
-          //limpiamos el valor de categoria en el data
-          this.nombre_categoria='';
-        }).catch(function(j){
-          console.log(j);
-        })
-
-      },
-      editandoCategoria:function(id){//toda esta funcion sirve para elegir el objeto que sera editado 
-        //es necesario el metodo show en el controlador
-        this.agregando=false;
-
-        this.id_grupo=id;
-
-        this.$http.get(apiCat + '/' + id).then(function(j){
-          console.log(j);
-          this.nombre_categoria=j.data.nombre_grupo;
-        })
-        $('#modalCategorias').modal('show');
-
-      },
-      actualizarCategoria:function(){
-
-        var cambiosCat={nombre_grupo:this.nombre_categoria}
-
-        this.$http.patch(apiCat + '/' + this.id_grupo,cambiosCat).then(function(j){
-          this.obtenercategorias();
-
-        })
-        $('#modalCategorias').modal('hide');
-
-      },
-      eliminarCategoria:function(id){
-
-        this.id_grupo=id;
-
-        Swal.fire({
-         title: 'Esta seguro de eliminar?',
-         text: "No podras revertir el cambio luego de confirmar! Recuerda que para eliminar correctamente es necesario que la categoria no cuente con productos, puedes moverlos a otra categoria para vaciar la que deseas eliminar",
-         icon: 'warning',
-         showCancelButton: true,
-         confirmButtonColor: '#3085d6',
-         cancelButtonColor: '#d33',
-         confirmButtonText: 'Sí, eliminar!'
-         }).then((result) => {
-           if (result.isConfirmed) {
-            this.$http.delete(apiCat + '/' + id).then(function(j){
-                //el get especies sirve para mostrar la tabla actualizada
-                this.obtenercategorias();
-            }).catch(function(j){
-                console.log(j);
+      guardarPlato:function(){
+        if (this.nombre.length === 0 || /^\s+$/.test(this.nombre)) {
+          Swal.fire({
+            position: 'center',
+            icon: 'warning',
+            title: 'Ingresa el nombre del producto',
+            showConfirmButton: false,
+            timer: 1500
             })
-            Swal.fire(
-           'Eliminado!',
-           'El producto se eliminó :(',
-           'Listo'
-          )
+        }else{
+          if (this.precio.length === 0 || /^\s+$/.test(this.precio)) {
+            Swal.fire({
+              position: 'center',
+              icon: 'warning',
+              title: 'Ingresa el precio del producto',
+              showConfirmButton: false,
+              timer: 1500
+              })
+          } else {
+            //construir el objeto
+              var plato = {nombre:this.nombre,precio:this.precio,comentario:this.comentario};
+              //console.log(plato);
+              this.$http.post(apiPlato,plato).then(function(j){
+              $('#modalPlatillo').modal('hide');
+              //console.log('exito');
+              this.obtenerPlatos();
+             //limpiamos el valor de categoria en el data
+             this.limpiarModal();
+             }).catch(function(j){
+             //console.log(j);
+             })
+
+             Swal.fire({
+              position: 'center',
+              icon: 'success',
+              title: 'Se agregó un nuevo plato',
+              showConfirmButton: false,
+              timer: 1500
+            })
+    
+            
           }
-         })
+        }
+        
+
+       
+      },
+      limpiarModal:function(){
+        this.nombre='',
+        this.precio='',
+        this.comentario=''
 
       },
-      verProductos:function(id){
-
-        this.prods=id;
-        console.log(this.prods);
-        this.visualizar=1;
+      editarPlatillos:function(id){
+          this.agregar=false;
+          this.id_plato=id;
+          //console.log(this.id_plato);
+          this.$http.get(apiPlato + '/' + id).then(function(j){
+            console.log(j);
+            this.nombre=j.data.nombre;
+            this.precio=j.data.precio;
+            this.comentario=j.data.comentario;
+          })
+          $('#modalPlatillo').modal('show');
+      },
+      actualizarPlato:function(){
+        if (this.nombre.length === 0 || /^\s+$/.test(this.nombre)) {
+          Swal.fire({
+            position: 'center',
+            icon: 'warning',
+            title: 'No puedes dejar vacio el nombre',
+            showConfirmButton: false,
+            timer: 1500
+            })
+        } else {
+          if (this.precio.length === 0 || /^\s+$/.test(this.precio)) {
+            Swal.fire({
+              position: 'center',
+              icon: 'warning',
+              title: 'No puedes dejar vacio el precio',
+              showConfirmButton: false,
+              timer: 1500
+              })
+            
+          } else {
+            var cambiosPlato = {nombre:this.nombre,
+              precio:this.precio,
+              comentario:this.comentario}
+              //console.log(cambiosProducto);
+              //console.log(this.categoriasCargadas);
+    
+              this.$http.patch(apiPlato + '/' + this.id_plato,cambiosPlato).then(function(j){
+              this.obtenerPlatos();
+              
+              });
+              $('#modalPlatillo').modal('hide');
+              Swal.fire({
+                position: 'center',
+                icon: 'success',
+                title: 'Actualizado',
+                showConfirmButton: false,
+                timer: 1500
+              })
+      
+          }
+          
+        }
+        
+      },
+      eliminarPlato(id){
+        Swal.fire({
+          title: 'Esta seguro de eliminar?',
+          text: "No podras revertir el cambio luego de confirmar!",
+          icon: 'warning',
+          showCancelButton: true,
+          confirmButtonColor: '#3085d6',
+          cancelButtonColor: '#d33',
+          confirmButtonText: 'Sí, eliminar!'
+          }).then((result) => {
+            if (result.isConfirmed) {
+             this.$http.delete(apiPlato + '/' + id).then(function(j){
+                 //el get especies sirve para mostrar la tabla actualizada
+                 this.obtenerPlatos();
+             }).catch(function(j){
+                 //console.log(j);
+             })
+             Swal.fire(
+            'Eliminado!',
+            'El plato se eliminó :(',
+            'Listo'
+           )
+           }
+          })
 
       },
-      regresarPrincipal:function(){
-        this.visualizar=0;
-      }
-
+    
+      
 
     },
+    computed:{
+      filtro(){
+        return this.platosCargados.filter((pro)=>{
+          return pro.nombre.toLowerCase().match(this.nombrePlato.toLowerCase().trim())
+          });
+
+      },
+
+    }
 })

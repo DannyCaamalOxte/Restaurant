@@ -197,6 +197,7 @@
 </div>
 <!-- ./wrapper -->
 @stack('scripts')
+<script src="js/sweetalert2.all.min.js"></script>
 <!-- jQuery -->
 <script src="plugins/jquery/jquery.min.js"></script>
 <!-- jQuery UI 1.11.4 -->

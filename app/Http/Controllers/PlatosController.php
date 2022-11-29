@@ -24,9 +24,16 @@ class PlatosController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $r)
     {
-        //
+        //metodo para agregar un nuevo plato
+        $plato = new Platos();
+
+        $plato->nombre=$r->get('nombre');
+        $plato->precio=$r->get('precio');
+        $plato->comentario=$r->get('comentario');
+
+        $plato->save();
     }
 
     /**
@@ -38,6 +45,7 @@ class PlatosController extends Controller
     public function show($id)
     {
         //
+        return Platos::find($id);
     }
 
     /**
@@ -49,7 +57,14 @@ class PlatosController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        // esta funcion actualiza un platillo
+        $plato = Platos::find($id);
+
+        $plato->nombre=$request->get('nombre');
+        $plato->precio=$request->get('precio');
+        $plato->comentario=$request->get('comentario');
+
+        $plato->update();
     }
 
     /**
@@ -60,6 +75,8 @@ class PlatosController extends Controller
      */
     public function destroy($id)
     {
-        //
+        //este metodo elimina platos
+        $plato=Platos::find($id);
+        $plato->delete();
     }
 }

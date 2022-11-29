@@ -15,7 +15,7 @@
                         </ol>                        <div class="row">
                             <div class="col-xl-3 col-md-6">
                                 <div class="card bg-info text-white mb-4">
-                                    <img src="dist/img/bebidauva.jpg" width="200" height="135">
+                                    <img src="dist/img/bebidauva.jpg">
                                     <div class="card-body"><center>Bebida de uva</center></div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
                                         <a class="small text-white stretched-link" href="#">$50.00 MXN</a>
@@ -37,7 +37,7 @@
 
                             <div class="col-xl-3 col-md-6">
                                 <div class="card bg-info text-white mb-4">
-                                    <img src="dist/img/bebidasandia.jpg" width="200" height="135">
+                                    <img src="dist/img/bebidasandia.jpg" height="180">
                                     <div class="card-body"><center>Bebida de sandia</center></div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
                                         <a class="small text-white stretched-link" href="#">$20.00 MXN</a>

@@ -15,7 +15,7 @@
                         </ol>                        <div class="row">
                             <div class="col-xl-3 col-md-6">
                                 <div class="card bg-info text-white mb-4">
-                                    <img src="dist/img/eclairs.jpg" width="200" height="135">
+                                    <img src="dist/img/eclairs.jpg" height="180">
                                     <div class="card-body"><center>Eclairs</center></div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
                                         <a class="small text-white stretched-link" href="#">$50.00 MXN</a>
@@ -26,7 +26,7 @@
 
                              <div class="col-xl-3 col-md-6">
                                 <div class="card bg-info text-white mb-4">
-                                    <img src="dist/img/cheesecake.jpg" width="200" height="135">
+                                    <img src="dist/img/cheesecake.jpg" height="180">
                                     <div class="card-body"><center>Cheesecake</center></div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
                                         <a class="small text-white stretched-link" href="#">$30.00 MXN</a>
@@ -37,7 +37,7 @@
 
                             <div class="col-xl-3 col-md-6">
                                 <div class="card bg-info text-white mb-4">
-                                    <img src="dist/img/muffin.jpg" width="200" height="135">
+                                    <img src="dist/img/muffin.jpg" height="180">
                                     <div class="card-body"><center>Muffin</center></div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
                                         <a class="small text-white stretched-link" href="#">$20.00 MXN</a>
