@@ -39,6 +39,7 @@ Route::view('agregarPlatillos','agregarPlatillos');
 Route::view('corteCaja','corteCaja');
 Route::view('Bebidas','bebidas');
 Route::view('Postres','postres');
+Route::view('Categorias','categorias');
 
 //apis
 Route::apiResource('apiProducto','ProductoController');
@@ -51,6 +52,7 @@ Route::apiResource('apiProductot','ProductotController');
 Route::apiResource('apiPedido','PedidoController');
 //apisnewleaft
 Route::apiResource('apiPlato','PlatosController');
+Route::apiResource('apiCat','CategoriaController');
 
 //generar ticket
 Route::get('ticket/{folio}',[

@@ -116,6 +116,13 @@
                     <input type="number" class="form-control" placeholder="Precio" v-model="precio">
                 </div>
               </div>
+              <div class="row">
+                <div class="col-md-6">
+                    <option value="">
+                      
+                    </option>
+                </div>
+              </div>
               <br>
               <div class="row">
                 <div class="col-md-6">

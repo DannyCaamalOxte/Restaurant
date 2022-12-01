@@ -1,7 +1,7 @@
 var ruta = document.querySelector("[name=route]").value;
 
 var apiPlato=ruta + '/apiPlato';
-
+var apiCat=ruta + '/apiCat';
 new Vue({
 	http: {
       headers: {
@@ -14,6 +14,7 @@ new Vue({
     data:{
     	mensaje:'Administración del menú',
       platosCargados:[],
+      categoriasCargadas:[],
       nombre:'',
       precio:0,
       comentario:'',
@@ -24,13 +25,21 @@ new Vue({
     },
     created:function(){
     	this.obtenerPlatos();
+      this.obtenerCategorias();
 
     },
     methods:{
     	obtenerPlatos:function(){
     		this.$http.get(apiPlato).then(function(j){
     			this.platosCargados=j.data;
-    			//console.log(this.platosCargados);
+    			console.log(this.platosCargados);
+    		})
+    	   
+    	},
+      obtenerCategorias:function(){
+    		this.$http.get(apiCat).then(function(j){
+    			this.categoriasCargadas=j.data;
+    			console.log(this.categoriasCargadas);
     		})
     	   
     	},

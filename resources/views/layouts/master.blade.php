@@ -155,6 +155,12 @@
                   <p>Corte de caja</p>
                 </a>
               </li>
+              <li class="nav-item">
+                <a href="Categorias" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Categorias</p>
+                </a>
+              </li>
             </ul>
           </li>
           
