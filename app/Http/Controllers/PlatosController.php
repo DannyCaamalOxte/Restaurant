@@ -31,6 +31,7 @@ class PlatosController extends Controller
 
         $plato->nombre=$r->get('nombre');
         $plato->precio=$r->get('precio');
+        $plato->categoria=$r->get('categoria');
         $plato->comentario=$r->get('comentario');
 
         $plato->save();
@@ -62,6 +63,7 @@ class PlatosController extends Controller
 
         $plato->nombre=$request->get('nombre');
         $plato->precio=$request->get('precio');
+        $plato->categoria=$request->get('categoria');
         $plato->comentario=$request->get('comentario');
 
         $plato->update();

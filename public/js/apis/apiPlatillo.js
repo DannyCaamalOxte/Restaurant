@@ -21,6 +21,7 @@ new Vue({
       agregar:true,
       id_plato:'',
       nombrePlato:'',
+      categoria:'',
 
     },
     created:function(){
@@ -69,7 +70,7 @@ new Vue({
               })
           } else {
             //construir el objeto
-              var plato = {nombre:this.nombre,precio:this.precio,comentario:this.comentario};
+              var plato = {nombre:this.nombre,precio:this.precio,comentario:this.comentario,categoria:this.categoria};
               //console.log(plato);
               this.$http.post(apiPlato,plato).then(function(j){
               $('#modalPlatillo').modal('hide');

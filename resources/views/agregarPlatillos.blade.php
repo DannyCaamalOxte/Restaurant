@@ -116,11 +116,17 @@
                     <input type="number" class="form-control" placeholder="Precio" v-model="precio">
                 </div>
               </div>
+              <br>
               <div class="row">
                 <div class="col-md-6">
-                    <option value="">
-                      
+                  <select class="form-control" v-model="categoria">
+                    <option disabled="">Elige una categoria</option>
+                    <option v-for="categoria in categoriasCargadas" v-bind:value="categoria.id_categoria">
+                      @{{categoria.categoria}}
                     </option>
+                    
+                  </select>
+
                 </div>
               </div>
               <br>

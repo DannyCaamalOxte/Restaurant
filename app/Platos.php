@@ -15,6 +15,7 @@ class Platos extends Model
     	'id_platillo',
     	'nombre',
     	'precio',
-    	'comentario'
+    	'comentario',
+        'categoria'
     ];
 }
