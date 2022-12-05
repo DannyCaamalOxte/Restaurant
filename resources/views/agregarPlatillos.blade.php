@@ -3,7 +3,8 @@
 @section('contenido')
 
 <div id="apiPlatillos">
-<center><h1>@{{mensaje}}</h1></center>
+  <br>
+<center><h2>@{{mensaje}}</h2></center>
 <br>
 <div class="card card-primary card-outline">
               <div class="card-body" >
@@ -34,7 +35,7 @@
                     </div>
                     <div class="row">
                     <div class="col-xl-3 col-md-4" v-for="plato in filtro">
-                                <div class="card bg-info text-white mb-4">
+                                <div class="card text-white mb-4" style="background:#244F56">
                                     <img src="dist/img/jugonaranja.jpg">
                                     <div class="card-body" >
                                         <div class="row">
@@ -55,7 +56,7 @@
                                     </div>
                                     
                                     <!--<div class="card-footer d-flex align-items-center justify-content-between">-->
-                                    <div class="card-footer">
+                                    <div class="card-footer" style="background:#244F56">
                                     <div class="row">
                                     <div class="col-sm-6 border-right">
                                     <div class="description-block">

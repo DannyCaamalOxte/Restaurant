@@ -2,8 +2,10 @@
 @section('titulo','Categorias')
 @section('contenido')
 
-<h1>Categorias</h1>
 <div id="apiCategorias">
+<br>
+<center><h2>@{{mensaje}}</h2></center>
+<br>
 <div v-if="vista==0">
 <!--INICIO VISTA 0-->
 <div class="card card-primary card-outline">
@@ -13,7 +15,7 @@
                 		
                 	</div>
                 	<div class="col-md-6">
-                		<h3>@{{mensaje}}</h3>
+                		
                 	</div>
                 	
                    
@@ -33,8 +35,8 @@
             <div class="card card-widget widget-user" >
               <!-- Add the bg color to the header using any of the bg-* classes -->
               <div class="widget-user-header " style="background:#244F56">
-                <h3 class="widget-user-username">@{{categoria.categoria}}</h3>
-                <button class="btn btn-sm" style="background:#244F56" @click="">
+                <h3 class="widget-user-username text-white">@{{categoria.categoria}}</h3>
+                <button class="btn btn-sm text-white" style="background:#244F56" @click="cambiarVista1(categoria.productos)">
                   Ver
                 </button>
               </div>
@@ -45,7 +47,7 @@
                 <div class="row">
                   <div class="col-sm-4 border-right">
                     <div class="description-block">
-                      <button class="btn btn-warning" @click="editarCategoria(categoria.id_categoria)">
+                      <button class="btn btn-warning " @click="editarCategoria(categoria.id_categoria)">
                         <i class="fas fa-pen">
                             
                           </i>
@@ -81,8 +83,7 @@
           </div>
             	
             </div>
-                <a href="#" class="card-link">Card link</a>
-                <a href="#" class="card-link">Another link</a>
+                
               </div>
 
               
@@ -91,8 +92,47 @@
 <!--FIN DE VISTA 0-->
 </div>
 <div v-if="vista==1">
-
+<!--MOSTRAR PRODUCTOS DE UNA CATEGORIA-->
+  <div class="card card-primary card-outline">
+    <div class="card-header">
+      <h5>Productos</h5>
+    </div>
+    <div class="card-body">
+      <div class="form-row">
+        <div class="col-md-6">
+          <!--TABLA-->
+          <table class="table table-bordered table-striped table-hover table-sm">
+        <thead>
+          <th>Nombre</th>
+          <th>Clave</th>
+        </thead>
+        <tbody>
+          <tr v-for="p in prods">
+            <td>@{{p.nombre}}</td>
+            <td>@{{p.precio}}</td>
+          </tr>
+        </tbody>
+      </table>
+      <!-- FIN DE TABLA-->
+        </div> 
+        <div class="col-md-6">
+          <div class="alert alert-info alert-dismissible">
+                  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                  <h5><i class="icon fas fa-info"></i> Atención!</h5>
+                  <h5>Recuerda que puedes cambiar las categorias a las que pertenecen los productos en la vista Agregar platillos</h5>
+        </div>
+          
+        </div>
+      </div>
+      
+      <!--@{{prods}}-->
+      <button class="btn btn-sm text-white"style="background:#244F56" @click="regresarPrincipal()">
+        Regresar
+      </button>
+    </div>
+  </div>
 </div>
+<!--FIN DE MOSTRAR PRODUCTOS DE UNA CATEGORIA-->
 
 
 

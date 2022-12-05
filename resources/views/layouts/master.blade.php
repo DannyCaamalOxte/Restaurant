@@ -32,6 +32,9 @@
   <meta name="token" id="token" value="{{ csrf_token() }}">
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
+  <
+
+  
 <div class="wrapper">
 
   <!-- Preloader -->
@@ -74,7 +77,6 @@
           </form>
         </div>
       </li> -->
-
       
 
 
@@ -88,7 +90,7 @@
     <!-- Brand Logo -->
     <a href="index" class="brand-link">
       <img src="dist/img/logo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-      <span class="brand-text font-weight-light">New Leaft</span>
+      <span class="brand-text font-weight-light">New Leaf</span>
     </a>
 
     <!-- Sidebar -->
@@ -214,6 +216,7 @@
   </aside>
   <!-- /.control-sidebar -->
 </div>
+   
 <!-- ./wrapper -->
 @stack('scripts')
 <script src="js/sweetalert2.all.min.js"></script>

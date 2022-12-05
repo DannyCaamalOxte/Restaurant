@@ -23,6 +23,7 @@ new Vue({
         id_categoria: "",
         nombrePlato: "",
         vista: 0,
+        prods:[],
     },
     created: function () {
         this.obtenerCategorias();
@@ -124,7 +125,7 @@ new Vue({
         eliminarPlato(id) {
             Swal.fire({
                 title: "Esta seguro de eliminar?",
-                text: "No podras revertir el cambio luego de confirmar!",
+                text: "No podras revertir el cambio luego de confirmar! Recuerda que para eliminar correctamente es necesario que la categoria no cuente con productos, puedes moverlos a otra categoria para vaciar la que deseas eliminar",
                 icon: "warning",
                 showCancelButton: true,
                 confirmButtonColor: "#3085d6",
@@ -145,9 +146,15 @@ new Vue({
                 }
             });
         },
-        cambiarVista1(){
+        cambiarVista1(id){
+            this.vista=1;
+            this.prods=id;
+            console.log(this.prods);
+        },
+        regresarPrincipal(){
+            this.vista=0;
 
-        }
+        },
     },
     computed: {
         filtro() {
