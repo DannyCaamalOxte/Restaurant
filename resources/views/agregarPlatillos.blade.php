@@ -13,6 +13,7 @@
                     <div class="callout callout-info">
                         <div class="row">
                         <div class="col-md-6">
+                          <p>Búsqueda</p>
                         <input type="text" class="form-control" placeholder="Escriba el nombre del plato" aria-label="Recipient's username" aria-describedby="basic-addon2" v-model="nombrePlato">
                         </div>
                          <div class="col-md-6">
@@ -147,7 +148,7 @@
         </div>
         <!-- /.modal-dialog -->
       </div>
-<!-- /.fin de ventana modal -->
+        <!-- /.fin de ventana modal -->
 
 
 </div><!-- /.fin del objeto vue -->

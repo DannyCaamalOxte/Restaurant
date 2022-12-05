@@ -13,6 +13,7 @@ new Vue({
 
     data:{
     	mensaje:'Administración del menú',
+      mensajemenu:'Menú (Todos)',
       platosCargados:[],
       categoriasCargadas:[],
       nombre:'',
