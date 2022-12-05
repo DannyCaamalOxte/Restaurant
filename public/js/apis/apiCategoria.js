@@ -22,7 +22,7 @@ new Vue({
         agregar: true,
         id_categoria: "",
         nombrePlato: "",
-        vista: 1,
+        vista: 0,
     },
     created: function () {
         this.obtenerCategorias();
